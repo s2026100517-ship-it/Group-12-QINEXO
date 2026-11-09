@@ -85,7 +85,8 @@ void invalidSelection(string selectMessage) {
 void returnEnd(char &confirm, bool &confirmed, string returnEndMessage) {
     do {
         cout << "\n";
-        cout << "   Would you like to return to " << returnEndMessage << "?" << endl;
+        cout << "Would you like to return to " << returnEndMessage << "?" << endl;
+        cout << "\n";
         cout << "   Enter Y to confirm or N to end transaction: ";
         cin >> confirm;
         //Not Y/N
@@ -443,30 +444,29 @@ int main() {
                     // SCREENING SCHEDULES
                     while (!confirmed4) {
                         cout << "\n";
-                        cout << "Available screening schedule for" << endl;
-                        cout << selectedMovie << ":" << endl;
+                        cout << "\t\t  Available schedule" << endl;
                         cout << "\n";
 
                         switch (movie) {
                             case 1:
-                                cout << "[1] November 5, 2026 - 10:00 AM, Hall 1" << endl;
-                                cout << "[2] November 5, 2026 - 1:30 PM, Hall 2" << endl;
-                                cout << "[3] November 6, 2026 - 4:45 PM, Hall 3" << endl;
+                                cout << "       [1] November 5, 2026 - 10:00 AM, Hall 1" << endl;
+                                cout << "       [2] November 5, 2026 - 1:30 PM, Hall 2" << endl;
+                                cout << "       [3] November 6, 2026 - 4:45 PM, Hall 3" << endl;
                                 break;
                             case 2:
-                                cout << "[1] November 5, 2026 - 9:00 AM, Hall 1" << endl;
-                                cout << "[2] November 5, 2026 - 11:30 AM, Hall 2" << endl;
-                                cout << "[3] November 6, 2026 - 2:00 PM, Hall 3" << endl;
+                                cout << "       [1] November 5, 2026 - 9:00 AM, Hall 1" << endl;
+                                cout << "       [2] November 5, 2026 - 11:30 AM, Hall 2" << endl;
+                                cout << "       [3] November 6, 2026 - 2:00 PM, Hall 3" << endl;
                                 break;
                             case 3:
-                                cout << "[1] November 12, 2026 - 10:00 AM, Hall 1" << endl;
-                                cout << "[2] November 12, 2026 - 1:30 PM, Hall 2" << endl;
-                                cout << "[3] November 13, 2026 - 4:45 PM, Hall 3" << endl;
+                                cout << "       [1] November 12, 2026 - 10:00 AM, Hall 1" << endl;
+                                cout << "       [2] November 12, 2026 - 1:30 PM, Hall 2" << endl;
+                                cout << "       [3] November 13, 2026 - 4:45 PM, Hall 3" << endl;
                                 break;
                         }
 
                         do {
-                            cout << "\nPlease choose a screening schedule: ";
+                            cout << "\n         Please choose a screening schedule: ";
                             cin >> sched;
 
                             if (cin.fail()) {
@@ -505,8 +505,8 @@ int main() {
                                 break;
                         }
 
-                        cout << "\nYour selected schedule is:" << endl;
-                        cout << selectedSchedule << endl;
+                        cout << "\n\t      Your selected schedule is:" << endl;
+                        cout << "          " << selectedSchedule << endl;
                         cout << "\n";
 
                         confirmation(confirm4, confirmed4, "Returning to schedule selection");
@@ -518,6 +518,8 @@ int main() {
                     
                     while (!ticketConfirmed && !returnToSchedule) {
                         do {
+                            cout << "\n";
+                            cout << "\t\t   Ticket quantity" << endl;
                             cout << "\n";
                             cout << "Price per ticket: PHP " << ticketPrice << endl;
                             cout << "How many tickets would you like to purchase? ";
@@ -684,7 +686,7 @@ int main() {
                     cout << "   [0] Done ordering" << endl;
                     cout << "\n";
 
-                    cout << "Please select a snack: ";
+                    cout << "\t       Please select a snack: ";
                     cin >> choice;
 
                     if (cin.fail()) {
@@ -711,7 +713,7 @@ int main() {
                     }
 
                     do {
-                        cout << "Enter quantity for " << snackName << ": ";
+                        cout << "\t    Enter quantity for " << snackName << ": ";
                         cin >> quantity;
 
                         if (cin.fail()) {
@@ -733,7 +735,7 @@ int main() {
                               << itemTotal << "\n";
                     snackList += snackLine.str();
 
-                    cout << "\n" << snackName << " added to your order!" << endl;
+                    cout << "\n\t    " << snackName << " added to your order!" << endl;
                     cout << "\n\n";
                 }
 
