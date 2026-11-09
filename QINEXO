@@ -420,6 +420,7 @@ int main() {
 
                 if (transactionCancelled) {
                     cout << "\n\t     Returning to the main menu..." << endl;
+                    cout << "\n\n\n";
                     break;
                 }
 
@@ -442,7 +443,7 @@ int main() {
                     // SCREENING SCHEDULES
                     while (!confirmed4) {
                         cout << "\n";
-                        cout << "Available screening schedule for" << endl;
+                        cout << "\t       Available screening schedule for" << endl;
                         cout << selectedMovie << ":" << endl;
                         cout << "\n";
 
@@ -518,6 +519,7 @@ int main() {
                     while (!ticketConfirmed && !returnToSchedule) {
                         do {
                             cout << "\n";
+                            cout << "Price per ticket: PHP " << ticketPrice << endl;
                             cout << "How many tickets would you like to purchase? ";
                             cin >> ticket;
                             cout << "\n";
@@ -576,9 +578,9 @@ int main() {
                         while (!confirmed6) {
                         
                             cout << "\n";
-                            cout << "\t\t    AVAILABLE SEATS" << endl;
+                            cout << "\t\t    Available seats" << endl;
                             cout << "\n";
-                            cout << "\t SCREEN" << endl;
+                            cout << "\t Screen" << endl;
                             cout << "\n";
                         
                             count = 0;
@@ -673,7 +675,7 @@ int main() {
 
                 while (choice != 0) {
                     cout << "\n";
-                    cout << "\t\t   AVAILABLE SNACKS" << endl;
+                    cout << "\t\t   Available snacks" << endl;
                     cout << "\n";
                     cout << "   [1] Popcorn                         PHP 120.00" << endl;
                     cout << "   [2] Nachos                          PHP 100.00" << endl;
@@ -684,7 +686,6 @@ int main() {
 
                     cout << "Please select a snack: ";
                     cin >> choice;
-                    cout << "-----------------------------------------------------" << endl;
 
                     if (cin.fail()) {
                         invalidNumber();
@@ -762,6 +763,8 @@ int main() {
                 hasBooking = true;
 
                 // RECEIPT
+                cout << "\n\n\n";
+                cout << "-----------------------------------------------------" << endl;
                 cout << "\n\n\n";
                 bookingSummary(lastName, lastAge, lastContact,
                                lastMovie, lastRating, lastSchedule,
@@ -856,27 +859,27 @@ int main() {
             }
         
             cout << "\n\t     Returning to the main menu..." << endl;
+            cout << "\n\n\n";
             break;
             }
 
             cout << "\n";
             
             // EXIT
-            case 4: {
-                cout << "\n";
-                cout << "\t Thank you for choosing QINEXO!" << endl;
-                cout << "\t Exiting the program..." << endl;
+            case 4:
                 running = false;
+                cout << "\n\t    Thank you for choosing QINEXO!" << endl;
                 break;
-            }
 
-            // INVALID MENU OPTION
-            default: {
+            default:
                 invalidSelection("menu");
                 break;
-            }
+        }
+
+        cout << "\n";
     }
 
     return 0;
 }
-}
+
+
