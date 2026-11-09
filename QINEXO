@@ -29,7 +29,7 @@ void invalidYesNo() {
 void invalidInput(string message) {
     cout << "\n";
     cout << "=====================================================" << endl;
-    cout << "      " << message << endl;
+    cout << "   " << message << endl;
     cout << "=====================================================" << endl;
     cout << "\n";
 }
@@ -531,7 +531,7 @@ int main() {
                                 ticket = 0;
                             }
                             else if (ticket <= 0) {
-                                invalidInput("  Invalid! Ticket quantity must be greater than 0.");
+                                invalidInput("Invalid! Ticket quantity must be greater than 0.");
                             }
                             else if (ticket > 20) {
                                 invalidInput(" Maximum capacity per transaction is 20 seats.");
