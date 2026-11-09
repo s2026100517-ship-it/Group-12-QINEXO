@@ -127,18 +127,18 @@ void bookingSummary(string name, int age, string contact,
 
     cout << "\n";
     cout << "=====================================================" << endl;
-    cout << "                  QINEXO RECEIPT" << endl;
+    cout << "                   QINEXO RECEIPT" << endl;
     cout << "=====================================================" << endl;
 
     cout << "\n";
-    cout << "                 CUSTOMER DETAILS" << endl;
+    cout << "                  CUSTOMER DETAILS" << endl;
     cout << "-----------------------------------------------------" << endl;
     cout << "Customer Name: " << name << endl;
     cout << "Age: " << age << endl;
     cout << "Contact Number: " << contact << endl;
 
     cout << "\n";
-    cout << "                 BOOKING SUMMARY" << endl;
+    cout << "                  BOOKING SUMMARY" << endl;
     cout << "-----------------------------------------------------" << endl;
     cout << "Movie: " << selectedMovie << endl;
     cout << "Rating: " << selectedRating << endl;
@@ -155,7 +155,7 @@ void bookingSummary(string name, int age, string contact,
 
     cout << "\n";
     cout << "-----------------------------------------------------" << endl;
-    cout << "                 PAYMENT SUMMARY" << endl;
+    cout << "                  PAYMENT SUMMARY" << endl;
     cout << "-----------------------------------------------------" << endl;
     cout << fixed << setprecision(2);
     cout << "Ticket Subtotal: PHP " << ticketTotal << endl;
@@ -163,7 +163,7 @@ void bookingSummary(string name, int age, string contact,
     cout << "Snack Total: PHP " << snackTotal << endl;
 
     cout << "\n";
-    cout << "                 SNACKS ORDERED" << endl;
+    cout << "                  SNACKS ORDERED" << endl;
     cout << "-----------------------------------------------------" << endl;
 
     if (snackList == "") {
@@ -582,7 +582,7 @@ int main() {
                             cout << "\n";
                             cout << "\t\t    Available seats" << endl;
                             cout << "\n";
-                            cout << "\t Screen" << endl;
+                            cout << "\t\t        Screen" << endl;
                             cout << "\n";
                         
                             count = 0;
@@ -591,19 +591,23 @@ int main() {
                             while (count < ticket) {
                         
                                 for (int i = 0; i < 20; i++) {
+                                    if (i % 5 == 0) {
+                                        cout << "\t       ";
+                                    }
+                                
                                     if (booked[movie - 1][sched - 1][i] == false) {
                                         cout << "[" << seats[i] << "] ";
                                     }
                                     else {
                                         cout << "[XX] ";
                                     }
-                        
+                                
                                     if ((i + 1) % 5 == 0) {
                                         cout << endl;
                                     }
                                 }
                         
-                                cout << "\nPlease choose seat " << count + 1 << ": ";
+                                cout << "\n\t       Please choose seat " << count + 1 << ": ";
                                 cin >> seatChoice;
                         
                                 seatFound = false;
@@ -625,7 +629,7 @@ int main() {
                                         seatFound = true;
                                         count++;
                         
-                                        cout << "\nSeat " << seatChoice
+                                        cout << "\n\t    Seat " << seatChoice
                                              << " successfully selected!" << endl;
                                         break;
                                     }
@@ -643,7 +647,7 @@ int main() {
                             } // END OF SEAT SELECTION LOOP
                         
                             // DISPLAY SELECTED SEATS
-                            cout << "Your selected seats: ";
+                            cout << "\t        Your selected seats: ";
                         
                             for (int i = 0; i < ticket; i++) {
                                 cout << selectedSeats[i] << " ";
