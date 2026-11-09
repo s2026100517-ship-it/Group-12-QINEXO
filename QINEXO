@@ -443,7 +443,7 @@ int main() {
                     // SCREENING SCHEDULES
                     while (!confirmed4) {
                         cout << "\n";
-                        cout << "\t       Available screening schedule for" << endl;
+                        cout << "Available screening schedule for" << endl;
                         cout << selectedMovie << ":" << endl;
                         cout << "\n";
 
