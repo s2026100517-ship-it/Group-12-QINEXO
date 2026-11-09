@@ -85,7 +85,7 @@ void invalidSelection(string selectMessage) {
 void returnEnd(char &confirm, bool &confirmed, string returnEndMessage) {
     do {
         cout << "\n";
-        cout << "Would you like to return to " << returnEndMessage << "?" << endl;
+        cout << "   Would you like to return to " << returnEndMessage << "?" << endl;
         cout << "\n";
         cout << "   Enter Y to confirm or N to end transaction: ";
         cin >> confirm;
@@ -531,10 +531,10 @@ int main() {
                                 ticket = 0;
                             }
                             else if (ticket <= 0) {
-                                invalidInput("Invalid! Ticket quantity must be greater than 0.");
+                                invalidInput("  Invalid! Ticket quantity must be greater than 0.");
                             }
                             else if (ticket > 20) {
-                                invalidInput("Maximum capacity per transaction is 20 seats.");
+                                invalidInput(" Maximum capacity per transaction is 20 seats.");
                                 ticket = 0;
                             }
 
@@ -549,10 +549,11 @@ int main() {
 
                         if (ticket > availableSeats) {
                             if (availableSeats == 0) {
-                                cout << "\nSorry, there are no more available seats for this screening." << endl;
+                                cout << "\n\t      Sorry, there are no more" << endl;
+                                cout << "\t  available seats for this screening." << endl;
                             }
                             else {
-                                cout << "\nSorry, only " << availableSeats << " seats are available." << endl;
+                                cout << "\n          Sorry, only " << availableSeats << " seats are available." << endl;
                             }
 
                             returnEnd(confirm4, confirmed4, "schedule selection");
